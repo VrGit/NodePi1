@@ -7,7 +7,7 @@ app.use(express.static('public')) ;
 
 app.get ('/params', function (req,res) {
     console.log(req.query.name) ;
-
+    res.send('value='+ req.query.name) ;
  });
 
 

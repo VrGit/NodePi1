@@ -4,11 +4,10 @@ function action1 () {
         url:'/params',
         data: {
             "name": $("#joueur").val()
-        },
-        dataType : 'json'
+        }
     })
     .done(function (data) {
-        
+        alert (data) ;
     })
     .fail(function(jq, status,err) {
         console.log("Ajax error",status) ;
