@@ -1,0 +1,24 @@
+{
+  "name": "foto",
+  "version": "1.0.0",
+  "description": "Image manager for Paillet",
+  "main": "app.js",
+  "scripts": {
+      "start": "node app.js",
+       "server": "nodemon app.js",
+       "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
+   },
+  "author": "Junior & Co.",
+  "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1"
+     },
+    "devDependencies": {
+      "nodemon": "^2.0.2",
+      "minimist": ">=1.2.3"
+    },
+    "engines": {
+      "node": "12.13.1"
+    }
+
+}
