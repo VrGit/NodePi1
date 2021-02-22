@@ -1,15 +1,38 @@
 const express = require('express') ;
 const path = require('path');
+const fs = require('fs') ;
+const paramsFile = __dirname+'/params.json' ;
+let rawParams = fs.readFileSync(paramsFile);
+var data = JSON.parse(rawParams);
 
 const app = express ();
 
 
+function add (r) {
+    let max = -1 ;
+    Object.keys(data).forEach (
+        key => {
+            let i = parseInt(key) ;
+            if (i>max) max=i ;
+        }
+    ) ;
+    max++ ;
+    data[max]=r ;
+}
+function save () {
+    let str = JSON.stringify(data, null, 2);
+    fs.writeFile(paramsFile, str, (err) => {
+        if (err) throw err;
+     });
+}
 
 app.use(express.static('public')) ;
 
 app.get ('/params', function (req,res) {
-    console.log(req.query.name) ;
-    res.send('value='+ req.query.name) ;
+    add(req.query.name) ;
+    save ();
+    let str = JSON.stringify(data, null, 2);
+    res.send(str) ;
  });
 
 
