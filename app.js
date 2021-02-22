@@ -3,7 +3,7 @@ const app = express ();
 
 
 
-app.use(express.static('public')) ;
+// app.use(express.static('public')) ;
 
 app.get ('/params', function (req,res) {
     console.log(req.query.name) ;
