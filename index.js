@@ -1,6 +1,9 @@
+
 const express = require('express') ;
 const path = require('path');
+
 const fs = require('fs') ;
+
 const paramsFile = __dirname+'/params.json' ;
 let rawParams = fs.readFileSync(paramsFile);
 var data = JSON.parse(rawParams);
@@ -26,20 +29,19 @@ function save () {
      });
 }
 
-// app.use(express.static('public')) ;
-// app.use('/static', express.static(path.join(__dirname + '/public')));
+app.use(express.static('public')) ;
+app.use('/static', express.static(path.join(__dirname + '/public')));
 
-app.get('/', (req, res) => {
-//      res.sendFile(path.join(__dirname + '/public/index.html'));
-    res.send('Hello') ;
-});
-
-// app.post ('/params', function (req,res) {
-//     add(req.query.name) ;
-//     save ();
-//     let str = JSON.stringify(data, null, 2);
-//     res.send(str) ;
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/public/index.html'));
 //  });
+
+app.get ('/params', function (req,res) {
+     add(req.query.name) ;
+     // save ();
+     let str = JSON.stringify(data, null, 2);
+     res.send(str) ;
+  });
 
 
 // Démarre le server sur le port 500

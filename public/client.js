@@ -1,6 +1,6 @@
 function action1 () {
     $.ajax( {
-        type: 'POST',
+        type: 'GET',
         url:'/params',
         data: {
             "name": $("#joueur").val()
@@ -12,6 +12,6 @@ function action1 () {
     })
     .fail(function(jq, status,err) {
         console.log("Ajax error",status) ;
-    });    
+    });     
 
 }

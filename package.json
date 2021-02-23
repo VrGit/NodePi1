@@ -2,11 +2,10 @@
   "name": "foto",
   "version": "1.0.0",
   "description": "Image manager for Paillet",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-      "start": "node app.js",
-       "server": "nodemon app.js"
-   },
+      "start": "node index.js"
+    },
   "author": "Junior & Co.",
   "license": "ISC",
     "dependencies": {
