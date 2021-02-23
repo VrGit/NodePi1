@@ -26,7 +26,7 @@ function save () {
      });
 }
 
-app.use(express.static('public')) ;
+// app.use(express.static('public')) ;
 
 app.get ('/params', function (req,res) {
     add(req.query.name) ;
