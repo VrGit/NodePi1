@@ -30,15 +30,16 @@ function save () {
 // app.use('/static', express.static(path.join(__dirname + '/public')));
 
 app.get('/', (req, res) => {
-      res.sendFile(path.join(__dirname + '/public/index.html'));
+//      res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.send('Hello') ;
 });
 
-app.post ('/params', function (req,res) {
-    add(req.query.name) ;
-    save ();
-    let str = JSON.stringify(data, null, 2);
-    res.send(str) ;
- });
+// app.post ('/params', function (req,res) {
+//     add(req.query.name) ;
+//     save ();
+//     let str = JSON.stringify(data, null, 2);
+//     res.send(str) ;
+//  });
 
 
 // Démarre le server sur le port 500
