@@ -1,6 +1,6 @@
 function action1 () {
     $.ajax( {
-        type: 'GET',
+        type: 'POST',
         url:'/params',
         data: {
             "name": $("#joueur").val()
