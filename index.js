@@ -38,7 +38,7 @@ app.use('/static', express.static(path.join(__dirname + '/public')));
 
 app.get ('/params', function (req,res) {
      add(req.query.name) ;
-     // save ();
+     save ();
      let str = JSON.stringify(data, null, 2);
      res.send(str) ;
   });
